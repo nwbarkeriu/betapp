@@ -4,7 +4,7 @@
 
     <section class="ContactUs">
         <div>
-          <h2 class="text-center"><a href="index.php">BetApp 2022</h2></a>
+          <h2 class="text-center"><a href="index.php">BetApp 22</h2></a>
         </div>
         <?php
         if (isset($_SESSION["useruid"])) {
