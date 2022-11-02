@@ -1,8 +1,8 @@
 <?php
-$serverName = "localhost";
-$dBUsername = "root";
-$dBPassword = "";
-$dBName = "scoreboard_php";
+$serverName = "66.216.52.75";
+$dBUsername = "webencedev_bettapp";
+$dBPassword = "6n77e;fn~+bz";
+$dBName = "webencedev_bettapp";
 
 $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
 
