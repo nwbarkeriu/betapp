@@ -13,12 +13,15 @@
           foreach ($response as $event => $value) {
             if($event == "events") {
               for ($i = 0; $i < count($value); $i++) {
+
                 //print $value[$i]->name . " Week # " . $value[$i]->week->number . "<br>";
                 for ($c = 0; $c < count($value[$i]->competitions); $c++) {
-                  
+
                   //for ($t = 0; $t < count($value[$i]->competitions[$c]->competitors); $t++) {
                     $home_logo = $value[$i]->competitions[$c]->competitors[0]->team->logo;
+                    $home_team = $value[$i]->competitions[$c]->competitors[0]->team->displayName;
                     $away_logo = $value[$i]->competitions[$c]->competitors[1]->team->logo;
+                    $away_team = $value[$i]->competitions[$c]->competitors[1]->team->displayName;
                     print "<img src='" . $home_logo . "' width='5%' height='5%'>" . $value[$i]->competitions[$c]->competitors[0]->team->displayName . " @ "; //homeTeam
                     print "<img src='" . $away_logo . "' width='5%' height='5%'>" . $value[$i]->competitions[$c]->competitors[1]->team->displayName . "<br>"; //awayTeam
                     print $value[$i]->competitions[$c]->venue->fullName . " Stadium Name<br>";
