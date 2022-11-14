@@ -6,7 +6,26 @@
         <div>
           <h2 class="text-center"><a href="index.php">BetApp 22</h2></a>
         </div>
-        <?php            
+        <?php       
+        
+        require_once './includes/dbh.inc.php';
+        if($r_set = $conn->query("select * from players")) {
+          echo "<select style='width: 75%;'>";
+          //echo "<div class='ui fluid search selection dropdown'><input type='hidden' name='player'>
+          //<i class='dropdown icon'></i>
+          //<div class='default text'>Select Player</div>
+          //<div class='menu'>";
+        while ($row = $r_set->fetch_assoc()) {
+        //echo "<option><img src='" . $row[player_img] . "'width='5%' height='5%'/></option>";
+        echo "<option style='background-image:url(" .$row[player_img]. "); background-repeat:no-repeat; padding-left:30px;'>" . " " . $row[player_name] . " " . $row[player_pos] . "</option>";
+        //echo "<div><i>$row[id]>$row[player_name]" . " " . "$row[player_pos]</i></div>";
+        }
+        echo "</select>";
+        //echo "</div></div>";
+          }else{
+          echo $conn->error;
+          }
+
           $response = file_get_contents('https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard');
           $response = json_decode($response);
           
